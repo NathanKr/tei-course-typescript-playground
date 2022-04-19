@@ -1,30 +1,24 @@
 import { writePerson } from "./utils";
 
-// --- inferred types : boolean , number , string 
-let flag = true;
-let num = 11;
-let str = 'hello world !!';
-// let s = flag + num + str; // problem adding boolean to string
-let s = num + str; // problem fixed
+console.log('types');
+
+// --- boolean , number , string
+// let flag = true;
+let num  = 11;
+let str = 'Hello World';
+let s = num + str;
 console.log(s);
 
-// js code with two problem
-// let fruits = ['apple' , 'melon' , 1]; // js problem
-// fruits.forEach(fruit => {
-//     console.log(fruit);
-//     console.log(`${fruit} , ${fruit.lngth}`);// js two problems
-// });
+// --- array
+let fruits = ['melon' , 'grapes' , 'apple'];
 
-let fruits = ['apple' , 'melon' , "1"]; // problem fixed via static type check
 fruits.forEach(fruit => {
-    console.log(fruit);
-    console.log(`${fruit} , ${fruit.length}`);// js two problems
+    console.log(fruit.length);
 });
 
 
 // --- object
-let person = {firstName : 'Jim',lastName : 'Carter' , age : 33};
-writePerson(person);// --- Quick fix - auto import
+let person = { firstName: "Jim", lastName: "Carter", age: 33 };
+writePerson(person);
 
-
-export {} // must because no import and export so problematic under --isolatedModules
+export {}

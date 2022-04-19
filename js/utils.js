@@ -1,6 +1,9 @@
+// export function writePerson(person){
+//     console.log(`first : ${person.first} , last : ${person.last} , age : ${age} `);
+// }
+
 export function writePerson(person) {
   console.log(
-      // --- problems
-    `first : ${person.firstname} , last : ${lastname} , age : ${person.age}`
+    `first : ${person.firstName} , last : ${person.lastName} , age : ${person.age} `
   );
 }

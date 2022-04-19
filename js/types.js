@@ -1,20 +1,23 @@
 import {writePerson} from './utils'
 
-// --- boolean , number , string 
+console.log("types");
+
+// --- boolean , number , string
+
 let flag = true;
 let num = 11;
-let str = 'hello world !!';
-let s = flag + num + str; // js problem
+let str = "Hello World";
+// let s = glag + num + str;
+let s = flag + num + str;
 console.log(s);
 
 // --- array
-let fruits = ['apple' , 'melon' , 1]; // js problem
-fruits.forEach(fruit => {
-    console.log(fruit);
-    console.log(`${fruit} , ${fruit.lngth}`);// js two problems
+let fruits = ["melon", "grapes", 1];
+
+fruits.forEach((fruit) => {
+  console.log(fruit.length);
 });
 
-
 // --- object
-let person = {firstName : 'Jim',lastName : 'Carter' , age : 33};
-writePerson(person);// --- problem in writePerson , you will see this only on run time
+let person = { firstName: "Jim", lastName: "Carter", age: 33 };
+writePerson(person);

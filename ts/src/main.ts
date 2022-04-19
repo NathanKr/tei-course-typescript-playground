@@ -1,6 +1,6 @@
-import './style.css'
+import './style.css';
 import './types'
 
 const app = document.querySelector<HTMLDivElement>('#app')!
 
-app.innerHTML = `<h1>Hello ts!</h1>`
+app.innerHTML = `<h1>Hello Vite! - ts</h1>`
