@@ -1,6 +1,6 @@
 import { writePerson } from "./utils";
 
-// --- boolean , number , string 
+// --- inferred types : boolean , number , string 
 let flag = true;
 let num = 11;
 let str = 'hello world !!';
