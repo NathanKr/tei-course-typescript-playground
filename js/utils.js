@@ -8,8 +8,7 @@ export function writePerson(person) {
   );
 }
 
-
-// --- numeric sum : add numbers
+// --- numeric sum : add two numbers
 export function sum(n1,n2){
-  return (n1+n2);
+  return n1+n2;
 }

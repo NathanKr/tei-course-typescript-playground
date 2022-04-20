@@ -8,12 +8,11 @@ export function writePerson(person: {
   );
 }
 
-// --- numeric sum : add numbers
-export function sum(n1: number, n2: number): number {
-  return n1 + n2;
+// --- numeric sum : add two numbers
+export function sum(n1 : number,n2 : number) : number{
+   return n1+n2;
 }
 
-// ----numeric mul : mul number
-export const mul = (n1: number, n2: number): number => {
-  return n1 * n2;
-};
+export const mul = (n1 : number,n2 : number) : number => {
+  return n1*n2;
+}
