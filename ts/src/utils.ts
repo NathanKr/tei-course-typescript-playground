@@ -1,3 +1,5 @@
+import IStudent from "./IStudent";
+
 export function writePerson(person: {
   firstName: string;
   lastName: string;
@@ -9,10 +11,27 @@ export function writePerson(person: {
 }
 
 // --- numeric sum : add two numbers
-export function sum(n1 : number,n2 : number) : number{
-   return n1+n2;
+export function sum(n1: number, n2: number): number {
+  return n1 + n2;
 }
 
-export const mul = (n1 : number,n2 : number) : number => {
-  return n1*n2;
+export const mul = (n1: number, n2: number): number => {
+  return n1 * n2;
+};
+
+export function writeStudent(student: IStudent) {
+  console.log(
+    `first : ${student.firstName} , last : ${student.lastName} , age : ${student.age} , avg : ${student.avgGrade}`
+  );
+}
+
+export function computeStudentsAvg(students : IStudent[]) : number{
+  let sum=0,count=0;
+
+  students.forEach(student => {
+    sum += student.avgGrade;
+    count++;
+  });
+
+  return sum/count;
 }

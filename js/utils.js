@@ -9,6 +9,25 @@ export function writePerson(person) {
 }
 
 // --- numeric sum : add two numbers
-export function sum(n1,n2){
-  return n1+n2;
+export function sum(n1, n2) {
+  return n1 + n2;
+}
+
+// firstName , lastName, age , avgGrade
+export function writeStudent(student) {
+  console.log(
+    `first : ${student.firstName} , last : ${student.lastName} , age : ${student.age} , avg : ${student.avgGrade}`
+  );
+}
+
+export function computeStudentsAvg(students) {
+  let sum = 0,
+    count = 0;
+
+  students.forEach((student) => {
+    sum += student.avgGrade;
+    count++;
+  });
+
+  return sum / count;
 }
