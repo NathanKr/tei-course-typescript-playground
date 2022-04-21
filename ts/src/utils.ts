@@ -1,3 +1,4 @@
+import axios, { AxiosError, AxiosResponse } from "axios";
 import IStudent from "./IStudent";
 
 export function writePerson(person: {
@@ -34,4 +35,19 @@ export function computeStudentsAvg(students : IStudent[]) : number{
   });
 
   return sum/count;
+}
+
+export function printReditDataToConsole() {
+  let url = 'https://www.reddit.com/r/typescript.json'
+  axios
+    .get(url)
+    .then((res : AxiosResponse) => {
+      const root = res.data
+      root.data.children.forEach((child : any) => {
+        console.log(child.data.title);
+      });
+    })
+    .catch((err : AxiosError) => {
+      console.error(err);
+    });
 }

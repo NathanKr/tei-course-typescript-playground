@@ -2,6 +2,8 @@
 //     console.log(`first : ${person.first} , last : ${person.last} , age : ${age} `);
 // }
 
+import axios from 'axios'
+
 export function writePerson(person) {
   console.log(
     `first : ${person.firstName} , last : ${person.lastName} , age : ${person.age} `
@@ -30,4 +32,20 @@ export function computeStudentsAvg(students) {
   });
 
   return sum / count;
+}
+
+
+export function printReditDataToConsole() {
+  let url = 'https://www.reddit.com/r/typescript.json'
+  axios
+    .get(url)
+    .then((res) => {
+      const root = res.data
+      root.data.children.forEach((child) => {
+        console.log(child.data.title);
+      });
+    })
+    .catch((err ) => {
+      console.error(err);
+    });
 }

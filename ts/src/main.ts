@@ -1,7 +1,8 @@
 import './style.css';
 // import './types'
 // import './invoke-sum'
-import './invoke-students'
+// import './invoke-students'
+import './invoke-lodash'
 
 const app = document.querySelector<HTMLDivElement>('#app')!
 
