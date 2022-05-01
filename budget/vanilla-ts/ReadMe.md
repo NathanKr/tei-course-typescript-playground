@@ -47,4 +47,7 @@ build the budget project (javascript project) in vanilla typescript. Check <a hr
 
 
 <h2>todo</h2>
-css modules ???? possible ???
+<ol>
+<li>css modules ???? possible ???</li>
+<li>fix todo</li>
+</ol>

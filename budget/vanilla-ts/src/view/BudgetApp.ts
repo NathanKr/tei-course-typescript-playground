@@ -1,14 +1,15 @@
-import Body, { updateBody } from "./Body";
+import Body , { updateBodyOnAdd, updateBodyOnDelete } from "./Body";
 import Head, { updateHead } from "./Head";
 import Input from "./Input";
 
 const onAddBudgetItem = () => {
   updateHead();
-  updateBody();
+  updateBodyOnAdd();
 };
 
 const onDeleteBudegetItem = () => {
   updateHead();
+  updateBodyOnDelete()
 };
 
 export default function BudgetApp(app: HTMLDivElement): void {
