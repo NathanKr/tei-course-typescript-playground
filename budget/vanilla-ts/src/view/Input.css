@@ -1,0 +1,46 @@
+.Input button {
+  background-color: transparent;
+  font-size:2rem;
+  border: none;
+}
+
+.Input {
+  background-color: #f7f7f7;
+  padding: 1.5rem 0;
+  display: flex;
+}
+
+.button-income{
+  color : var(--income-color)
+}
+
+.button-outcome{
+  color : var(--outcome-color)
+}
+
+.selected-income{
+  border:1px solid var(--income-color);
+}
+
+.selected-outcome{
+  border:1px solid var(--outcome-color);
+}
+
+.Input input{
+  outline: none;
+  border-radius:5px;
+}
+
+.Input input[type='text']{
+  width:20rem;
+}
+
+.Input form {
+  display: flex;
+  height:2.5rem;
+  margin:auto;
+}
+
+.Input form > *{
+  margin:0 0.5rem; 
+}

@@ -1,0 +1,41 @@
+.Outcomes {
+  flex: 1;
+  text-align: left;
+}
+
+
+.Outcomes .item {
+  border-top : 1px solid grey;
+  display: flex;
+  padding: 0.5rem;
+  box-sizing:border-box;
+}
+
+.Outcomes .item > .left {
+  flex: 3;
+  text-align: left;
+}
+
+.Outcomes .item > .right {
+  flex: 1;
+  text-align: right;
+}
+
+.Outcomes .item .right:hover .delete {
+  margin-left: 1rem;
+  font-size:inherit;
+  visibility: visible;
+  transition: margin-left 0.3s;
+  transition-timing-function: ease-out;
+}
+
+.Outcomes .item .right .delete {
+  visibility: hidden;
+  font-size:0;
+  cursor: pointer;
+}
+
+.Outcomes .header , .Outcomes .item .right {
+  color: var(--outcome-color)
+}
+
