@@ -43,7 +43,7 @@ export default function Input(
   // --- can it be more elegant as Jonas did ?
   const buttonElem = `<button class="${CLASS_BUTTON_INCOME} fa fa-check-circle"></button>`;
   const inputElems = `<input  onfocus='focusHandler(this)' type='text' name='desc' required placeholder='Add Description'/>
-                      <input  onfocus='focusHandler(this)' type='number' name='amount' min=0 step=0.01 placeholder='Add Amount'/>`;
+                      <input  onfocus='focusHandler(this)' required type='number' name='amount' min=0 step=0.01 placeholder='Add Amount'/>`;
   const selectElem = `<select class='${CLASS_SELECTED_INCOME}' onclick='selectClickHandler(this)' name='type'>
                         <option value=${SelectOption.INCOME}>+</option>
                         <option value=${SelectOption.EXPENSES}>-</option>
