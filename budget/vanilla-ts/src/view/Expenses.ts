@@ -2,7 +2,7 @@ import {
   computeSum,
   deleteBudgetItem,
   getLastBudgetItem,
-  outcomes,
+  expenses,
 } from "../logic/budget-utils";
 import { BudegtType } from "../logic/enums";
 import { formatNumber } from "../logic/gen-utils";
@@ -13,68 +13,68 @@ import {
   CLASS_INOUT_LEFT,
   CLASS_INOUT_RIGHT,
 } from "./constants";
-import "./Outcomes.css";
+import "./Expenses.css";
 import { formatFinitePercentage } from "./view-utils";
 
-const CLASS_NAME = "Outcomes";
+const CLASS_NAME = "Expenses";
 const CLASS_NAME_PERCENTAGE = "percentage";
-//todo use common .ts , .css for incomes and outcomes because they are almost the same
+//todo use common .ts , .css for incomes and expenses because they are almost the same
 
-export default function Outcomes(externalDeleteHandler: () => void): string {
-  function deleteOutcome(id: string): void {
+export default function Expenses(externalDeleteHandler: () => void): string {
+  function deleteExpense(id: string): void {
     //logic : delete from array
-    deleteBudgetItem(id, BudegtType.OUTCOME);
+    deleteBudgetItem(id, BudegtType.EXPENSE);
 
     //view : delete from dom
     document.getElementById(getDomItemId(id))?.remove();
     externalDeleteHandler();
   }
 
-  (window as any).deleteOutcome = deleteOutcome;
+  (window as any).deleteExpense = deleteExpense;
   //const incomesElem = incomes.map((it) => ); this add comma
-  let outcomesElem = "";
-  outcomes.forEach((it) => {
-    outcomesElem += createOutcomeElem(it);
+  let expensesElem = "";
+  expenses.forEach((it) => {
+    expensesElem += createExpenseElem(it);
   });
 
-  return `<div class=${CLASS_NAME}><p class='header'>OUTCOMES</p> ${outcomesElem}</div>`;
+  return `<div class=${CLASS_NAME}><p class='header'>EXPENSES</p> ${expensesElem}</div>`;
 }
 
-function getOutcomesElement(): HTMLDivElement {
+function getExpensesElement(): HTMLDivElement {
   return document.querySelector(`.${CLASS_NAME}`)!;
 }
 
 function getDomItemId(id: string): string {
-  return `id_outcome_${id}`;
+  return `id_expense_${id}`;
 }
 
-export function updateAllOutcomePerecentage() {
+export function updateAllExpensePerecentage() {
   // --- relevant only on income change
 
   const totalIncome = computeSum(BudegtType.INCOME);
-  const domElemPercentage = getOutcomesElement().querySelectorAll(
+  const domElemPercentage = getExpensesElement().querySelectorAll(
     `.${CLASS_INOUT_ITEM} .${CLASS_NAME_PERCENTAGE} > span`
   );
-  outcomes.forEach((outcome, index) => {
-    const percentage = formatFinitePercentage(outcome.amount, totalIncome);
+  expenses.forEach((expense, index) => {
+    const percentage = formatFinitePercentage(expense.amount, totalIncome);
     (domElemPercentage[index] as HTMLSpanElement).innerHTML = `${percentage}`;
   });
 }
 
-export function onOutcomeAdded() {
-  // --- add item is last on outcomes
+export function onExpenseAdded() {
+  // --- add item is last on expenses
   const item = getLastBudgetItem();
-  const newItemElement = createOutcomeElem(item);
-  getOutcomesElement().innerHTML += newItemElement;
+  const newItemElement = createExpenseElem(item);
+  getExpensesElement().innerHTML += newItemElement;
 }
 
-function createOutcomeElem(it: IBudgetItem): string {
+function createExpenseElem(it: IBudgetItem): string {
   const leftElem = `<span class=${CLASS_INOUT_LEFT}>${it.description}</span>`;
-  const buttonElem = `<span class='${CLASS_INOUT_DELETE} fa fa-minus-circle' onclick=deleteOutcome('${it.id}')></span>`;
+  const buttonElem = `<span class='${CLASS_INOUT_DELETE} fa fa-minus-circle' onclick=deleteExpense('${it.id}')></span>`;
   const totalIncomes = computeSum(BudegtType.INCOME);
-  const outcome = it.amount;
+  const expense = it.amount;
   const percentageElem = `<span class=${CLASS_NAME_PERCENTAGE}><span>${formatFinitePercentage(
-    outcome,
+    expense,
     totalIncomes
   )}</span></span>`;
   const amountElem = `<span class='amount'>${formatNumber(it.amount)}</span>`;

@@ -1,4 +1,4 @@
 export enum BudegtType{
     INCOME,
-    OUTCOME
+    EXPENSE
 }

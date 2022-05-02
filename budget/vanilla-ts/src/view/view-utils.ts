@@ -1,10 +1,13 @@
 import { computePercentage, formatPercentage } from "../logic/gen-utils";
 
-export function formatFinitePercentage(outcome : number ,income : number ) : string{
-    const outcomesIncomesPercentage = computePercentage(outcome , income);
-    const percentageFormated: string = Number.isFinite(outcomesIncomesPercentage)
-    ? `${formatPercentage(outcomesIncomesPercentage)}%`
+export function formatFinitePercentage(
+  expense: number,
+  income: number
+): string {
+  const expensesIncomesPercentage = computePercentage(expense, income);
+  const percentageFormated: string = Number.isFinite(expensesIncomesPercentage)
+    ? `${formatPercentage(expensesIncomesPercentage)}%`
     : "--";
 
-    return percentageFormated;
+  return percentageFormated;
 }

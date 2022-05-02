@@ -11,7 +11,6 @@ Build the budget project (javascript project) in vanilla typescript. Check <a hr
 
 ![Screenshot](./figs/app-modules.png)
 
-
 <h2>Highlights</h2>
 <ul>
 <li>practice with typescript based on the 10-90% course</li>
@@ -32,27 +31,25 @@ Build the budget project (javascript project) in vanilla typescript. Check <a hr
 <li>View
 <ul>
 <li>component-based , like in react</li>
-<li>three main components : Head.ts , Input.ts , Body.ts(Incomes.ts \ Outcomes.ts)</li>
-<li>each component has CSS : Head.css , Input.css , Body.css(Incomes.css \ Outcomes.css)</li>
+<li>three main components : Head.ts , Input.ts , Body.ts(Incomes.ts \ Expenses.ts)</li>
+<li>each component has CSS : Head.css , Input.css , Body.css(Incomes.css \ Expenses.css)</li>
 <li>add\delete item in Input cause render of Head \ Body</li>
 </ul>   
 </li>
 <li>Logic
 <ul>
 <li>IBudgetItem : description : string , amount : number , id : string</li>
-<li>incomes\incomes : IBudgetItem [] , outcomes : IBudgetItem [] (percentage is computed thus not here)</li>
+<li>incomes\incomes : IBudgetItem [] , expenses : IBudgetItem [] (percentage is computed thus not here)</li>
 <li>operations : computeBudget, deleteBudgetItem,addBudgetItem,......
 </ul>
  </li>
 </ul>
 
-
 <h2>Flow</h2>
 Do logic and view together in this order: Head, Input, Body
-
 
 <h2>Future</h2>
 <ul>
 <li>fix todo</li>
-<li>income \ outcome of head and body can have big common stuff</li>
+<li>income \ expense of head and body can have big common stuff</li>
 </ul>

@@ -18,33 +18,32 @@
   font-size: 2.5rem;
 }
 
-.Head .income-outcome {
+.Head .income-expense {
   padding: 0.9rem;
   width: 25rem;
   margin: auto;
   display: flex;
 }
 
-.Head .income-outcome .title {
+.Head .income-expense .title {
   /* todo nath allow better grow of expenses may be over 50% */
   flex: 1;
   text-align: left;
 }
 
-.Head .income-outcome .number {
+.Head .income-expense .number {
   flex: 1;
   text-align: right;
   font-size: 1.1rem;
   display: flex;
-  align-items:center;
+  align-items: center;
 }
 
-
-.Head .income-outcome .number span:nth-child(1) {
+.Head .income-expense .number span:nth-child(1) {
   flex: 2;
 }
 
-.Head .income-outcome .number span:nth-child(2) {
+.Head .income-expense .number span:nth-child(2) {
   text-align: right;
   flex: 1;
 }
@@ -54,12 +53,12 @@
   margin-bottom: 0.5rem;
 }
 
-.Head .outcome .percentage > span {
+.Head .expense .percentage > span {
   font-size: 0.8rem;
-  background-color:var(--percentage-background-color);
-  padding:3px;
+  background-color: var(--percentage-background-color);
+  padding: 3px;
 }
 
-.Head .outcome {
-  background-color: var(--outcome-color);
+.Head .expense {
+  background-color: var(--expense-color);
 }

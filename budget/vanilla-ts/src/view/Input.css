@@ -1,6 +1,6 @@
 .Input button {
   background-color: transparent;
-  font-size:2rem;
+  font-size: 2rem;
   border: none;
 }
 
@@ -10,37 +10,37 @@
   display: flex;
 }
 
-.button-income{
-  color : var(--income-color)
+.button-income {
+  color: var(--income-color);
 }
 
-.button-outcome{
-  color : var(--outcome-color)
+.button-expense {
+  color: var(--expense-color);
 }
 
-.selected-income{
-  border:1px solid var(--income-color);
+.selected-income {
+  border: 1px solid var(--income-color);
 }
 
-.selected-outcome{
-  border:1px solid var(--outcome-color);
+.selected-expense {
+  border: 1px solid var(--expense-color);
 }
 
-.Input input{
+.Input input {
   outline: none;
-  border-radius:5px;
+  border-radius: 5px;
 }
 
-.Input input[type='text']{
-  width:20rem;
+.Input input[type="text"] {
+  width: 20rem;
 }
 
 .Input form {
   display: flex;
-  height:2.5rem;
-  margin:auto;
+  height: 2.5rem;
+  margin: auto;
 }
 
-.Input form > *{
-  margin:0 0.5rem; 
+.Input form > * {
+  margin: 0 0.5rem;
 }

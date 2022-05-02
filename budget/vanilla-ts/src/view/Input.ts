@@ -10,13 +10,13 @@ import "./Input.css";
 
 const CLASS_NAME = "Input";
 const CLASS_BUTTON_INCOME = "button-income";
-const CLASS_BUTTON_OUTCOME = "button-outcome";
-const CLASS_SELECTED_OUTCOME = "selected-outcome";
+const CLASS_BUTTON_EXPENSES = "button-expense";
+const CLASS_SELECTED_EXPENSES = "selected-expense";
 const CLASS_SELECTED_INCOME = "selected-income";
 
 enum SelectOption {
   INCOME = "income",
-  OUTCOME = "outcome",
+  EXPENSES = "expense",
 }
 
 export default function Input(
@@ -46,7 +46,7 @@ export default function Input(
                       <input  onfocus='focusHandler(this)' type='number' name='amount' min=0 step=0.01 placeholder='Add Amount'/>`;
   const selectElem = `<select class='${CLASS_SELECTED_INCOME}' onclick='selectClickHandler(this)' name='type'>
                         <option value=${SelectOption.INCOME}>+</option>
-                        <option value=${SelectOption.OUTCOME}>-</option>
+                        <option value=${SelectOption.EXPENSES}>-</option>
                       </select>`;
   const formElems = `${selectElem}${inputElems}${buttonElem}`;
   const formElem = `<form onsubmit='return addBudgetItemHandler()'>${formElems}</form>`;
@@ -58,7 +58,7 @@ function selectClickHandler(elem: HTMLSelectElement) {
   setCurrentBudgetType(
     getSelectOption() == SelectOption.INCOME
       ? BudegtType.INCOME
-      : BudegtType.OUTCOME
+      : BudegtType.EXPENSE
   );
 
   // --- second update ui
@@ -70,8 +70,8 @@ function toggleButton() {
   const elemButtonClassList =
     getFormElement().querySelector("button")?.classList;
   getSelectOption() == SelectOption.INCOME
-    ? elemButtonClassList!.replace(CLASS_BUTTON_OUTCOME, CLASS_BUTTON_INCOME)
-    : elemButtonClassList!.replace(CLASS_BUTTON_INCOME, CLASS_BUTTON_OUTCOME);
+    ? elemButtonClassList!.replace(CLASS_BUTTON_EXPENSES, CLASS_BUTTON_INCOME)
+    : elemButtonClassList!.replace(CLASS_BUTTON_INCOME, CLASS_BUTTON_EXPENSES);
 }
 
 function focusHandler(elem: HTMLElement) {
@@ -82,13 +82,13 @@ function toggleSelected(elem: HTMLElement) {
   const formElem = getFormElement();
   for (var i = 0; i < formElem.children.length; i++) {
     const child = formElem.children[i];
-    child.classList.remove(CLASS_SELECTED_OUTCOME);
+    child.classList.remove(CLASS_SELECTED_EXPENSES);
     child.classList.remove(CLASS_SELECTED_INCOME);
   }
   elem.classList.add(
     getCurrentBudgetType() == BudegtType.INCOME
       ? CLASS_SELECTED_INCOME
-      : CLASS_SELECTED_OUTCOME
+      : CLASS_SELECTED_EXPENSES
   );
 }
 
