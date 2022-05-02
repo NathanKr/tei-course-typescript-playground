@@ -5,7 +5,7 @@ import {
   outcomes,
 } from "../logic/budget-utils";
 import { BudegtType } from "../logic/enums";
-import { computePercentage, formatNumber } from "../logic/gen-utils";
+import { formatNumber } from "../logic/gen-utils";
 import IBudgetItem from "../logic/interfaces/IBudgetItem";
 import {
   CLASS_INOUT_DELETE,
@@ -53,7 +53,7 @@ export function updateAllOutcomePerecentage() {
 
   const totalIncome = computeSum(BudegtType.INCOME);
   const domElemPercentage = getOutcomesElement().querySelectorAll(
-    `.${CLASS_INOUT_ITEM} .${CLASS_NAME_PERCENTAGE}`
+    `.${CLASS_INOUT_ITEM} .${CLASS_NAME_PERCENTAGE} > span`
   );
   outcomes.forEach((outcome, index) => {
     const percentage = formatFinitePercentage(outcome.amount, totalIncome);
@@ -73,13 +73,12 @@ function createOutcomeElem(it: IBudgetItem): string {
   const buttonElem = `<span class='${CLASS_INOUT_DELETE} fa fa-minus-circle' onclick=deleteOutcome('${it.id}')></span>`;
   const totalIncomes = computeSum(BudegtType.INCOME);
   const outcome = it.amount;
-  const percentageElem = `<span class=${CLASS_NAME_PERCENTAGE}>${formatFinitePercentage(
+  const percentageElem = `<span class=${CLASS_NAME_PERCENTAGE}><span>${formatFinitePercentage(
     outcome,
     totalIncomes
-  )}</span>`;
-  const rightElem = `<div class=${CLASS_INOUT_RIGHT}><span>${formatNumber(
-    it.amount
-  )} ${percentageElem}</span>${buttonElem}</div>`;
+  )}</span></span>`;
+  const amountElem = `<span class='amount'>${formatNumber(it.amount)}</span>`;
+  const rightElem = `<div class=${CLASS_INOUT_RIGHT}><span class='number'> ${amountElem}  ${percentageElem}</span>${buttonElem}</div>`;
   return `<div class=${CLASS_INOUT_ITEM} id=${getDomItemId(
     it.id
   )}>${leftElem}${rightElem}</div>`;

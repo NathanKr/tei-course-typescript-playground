@@ -4,8 +4,12 @@ build the budget project (javascript project) in vanilla typescript. Check <a hr
 
 <h2>Highlights</h2>
 <ul>
-<li>practice with ts base on the 10-90% course</li>
-<li>use the power of module to use powerfull logic-view and component based design</li>
+<li>practice with typescript base on the 10-90% course</li>
+<li>use the power of es modules</li>
+<li>implement powerfull logic-view architecture</li>
+<li>use component based design</li>
+<li>build cool client side application</li>
+<li>use flexbox and advanced javascript features like class-list</li>
 </ul>
 
 <h2>Design</h2>
@@ -15,11 +19,9 @@ build the budget project (javascript project) in vanilla typescript. Check <a hr
 <li>view
 <ul>
 <li>component based , like in react</li>
-<li>all components are dumb thus all logig is from logic directory
 <li>Three main components : Head.ts , Input.ts , Body.ts</li>
 <li>each component has css : Head.css , Input.css , Body.css</li>
 <li>add\delete item cause render of few components !!! need to carefully check this</li>
-<li>BudgetIncomeItem and BudgetOutcomeItem recive both IBudgetItem. However, percentage is also passed to BudgetOutcomeItem because its dumb and show perentage</li>
 
 </ul>   
 </li>
@@ -37,12 +39,6 @@ build the budget project (javascript project) in vanilla typescript. Check <a hr
 <h2>Flow</h2>
 <ol>
 <li>do logic and view together on this order : Head , Input , Body</li>
-<li>refactor 
-<ul>
-<li>incomes \ outcomes in dict</li>
-<li>Incomes \ Outcomes share common
-</ul>
-</li>
 </ol>
 
 
@@ -50,4 +46,5 @@ build the budget project (javascript project) in vanilla typescript. Check <a hr
 <ol>
 <li>css modules ???? possible ???</li>
 <li>fix todo</li>
+<li>income \ outcome of head and body can have big common stuff</li>
 </ol>
