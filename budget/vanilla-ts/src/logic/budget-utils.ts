@@ -1,15 +1,8 @@
 import { BudegtType } from "./enums";
 import IBudgetItem from "./interfaces/IBudgetItem";
 
-export const incomes: IBudgetItem[] = [
-  { description: "income1", amount: 11, id: "1" },
-  { description: "income2", amount: 22, id: "2" },
-  { description: "income3", amount: 33, id: "3" },
-];
-export const outcomes: IBudgetItem[] = [
-  { description: "outcome1", amount: 7, id: "1" },
-  { description: "outcome2", amount: 17, id: "2" },
-];
+export const incomes: IBudgetItem[] = [];
+export const outcomes: IBudgetItem[] = [];
 
 let currentBudgetType: BudegtType = BudegtType.INCOME; // default
 
