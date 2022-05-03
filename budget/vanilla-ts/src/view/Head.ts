@@ -1,29 +1,43 @@
 import {
-  computeBudget,
-  computeTotal,
-  expenses,
-  incomes,
+  computeBudget, computeSum,
 } from "../logic/budget-utils";
-import { computePercentage, formatPercentage } from "../logic/get-utils";
+import { BudgetType } from "../logic/enums";
+import { formatNumber } from "../logic/gen-utils";
 import { getMonth, getYear } from "../logic/time-utils";
+import { ClassHead } from "./enums";
 import "./Head.css";
-
-const CLASS_NAME = "Head";
+import { formatFinitePercentage } from "./view-utils";
 
 export default function Head() {
   const now = new Date();
 
-  const dateElem = `<p class='date'>Available Budget in ${getMonth(
+  const dateElem = `<p class=${ClassHead.Date}>Available Budget in ${getMonth(
     now
   )} ${getYear(now)}</p>`;
-  const totalIncomes = computeTotal(incomes);
-  const totalExpenses = computeTotal(expenses);
-  const budgetElem = `<p class='budget number'>${computeBudget()}</p>`;
-  const incomeElem = `<p>INCOME ${totalIncomes}</p>`;
-  const percentage = computePercentage(totalExpenses, totalIncomes);
-  const expenseElem = `<p>EXPENSE ${totalExpenses} ${formatPercentage(
-    percentage
-  )}%`;
+  const totalIncomes = computeSum(BudgetType.Income);
+  const totalExpenses = computeSum(BudgetType.Expense);
+  const budget = computeBudget();
+  const budgetElem = `<p class='${ClassHead.Budget} ${
+    ClassHead.Number
+  }'>${formatNumber(budget)}</p>`;
+  const incomeElem = `<div class='${ClassHead.IncomeExpense} ${
+    ClassHead.Income
+  }'><span class=${ClassHead.Title}>INCOME</span><span class=${
+    ClassHead.Number
+  }><span>${formatNumber(totalIncomes)}</span><span><span></span></div>`;
+  const percentageElem = `<span>${formatFinitePercentage(
+    totalExpenses,
+    totalIncomes
+  )}</span>`;
+  const expenseElem = `<div class='${ClassHead.IncomeExpense} ${
+    ClassHead.Expense
+  }'><span class=${
+    ClassHead.Title
+  }>EXPENSE</span><span class='number'><span>${formatNumber(
+    totalExpenses
+  )}</span><span class=${
+    ClassHead.Percentage
+  }>${percentageElem}</span></span></div>`;
 
-  return `<div class=${CLASS_NAME}>${dateElem}${budgetElem}${incomeElem}${expenseElem}</div>`;
+  return `<div class=${ClassHead.Root}>${dateElem}${budgetElem}${incomeElem}${expenseElem}</div>`;
 }

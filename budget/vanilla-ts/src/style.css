@@ -10,4 +10,7 @@ body {
 
 :root {
   --white-color: white;
+  --income-color: #28b9b5;
+  --expense-color: #ff5049;
+  --percentage-background-color:#ff736d;
 }
