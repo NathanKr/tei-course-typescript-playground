@@ -1,7 +1,7 @@
 .Head {
-  padding: 0.5rem 0;
+  background-image: url("./images/back.jpg");
   background-size: cover;
-  background-image: url("back.jpg");
+  padding: 0.5rem 0;
 }
 
 .Head .date {
@@ -14,51 +14,6 @@
   color: var(--white-color);
 }
 
-.Head .budget {
-  font-size: 2.5rem;
-}
-
-.Head .income-expense {
-  padding: 0.9rem;
-  width: 25rem;
-  margin: auto;
-  display: flex;
-}
-
-.Head .income-expense .title {
-  /* todo nath allow better grow of expenses may be over 50% */
-  flex: 1;
-  text-align: left;
-}
-
-.Head .income-expense .number {
-  flex: 1;
-  text-align: right;
-  font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-}
-
-.Head .income-expense .number span:nth-child(1) {
-  flex: 2;
-}
-
-.Head .income-expense .number span:nth-child(2) {
-  text-align: right;
-  flex: 1;
-}
-
-.Head .income {
-  background-color: var(--income-color);
-  margin-bottom: 0.5rem;
-}
-
-.Head .expense .percentage > span {
-  font-size: 0.8rem;
-  background-color: var(--percentage-background-color);
-  padding: 3px;
-}
-
-.Head .expense {
-  background-color: var(--expense-color);
+.Head .budget{
+    font-size:2.5rem;
 }

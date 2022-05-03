@@ -1,55 +1,23 @@
-import { BudegtType } from "./enums";
 import IBudgetItem from "./interfaces/IBudgetItem";
 
-export const incomes: IBudgetItem[] = [];
-export const expenses: IBudgetItem[] = [];
+export const incomes: IBudgetItem [] = [
+  { description: "income1", amount: 11, id: "id1" },
+  { description: "income2", amount: 22, id: "id2" }
+];
+export const expenses: IBudgetItem [] = [
+  { description: "expense1", amount: 111, id: "id1" },
+  { description: "expense2", amount: 222, id: "id2" },
+];
 
-let currentBudgetType: BudegtType = BudegtType.INCOME; // default
+export function computeTotal(items : IBudgetItem []) : number{
+    let sum = 0;
+    items.forEach(item => {
+        sum += item.amount;
+    });
 
-export function getCurrentBudgetType(): BudegtType {
-  return currentBudgetType;
+    return sum;
 }
 
-export function getLastBudgetItem(): IBudgetItem {
-  const items: IBudgetItem[] =
-    currentBudgetType == BudegtType.INCOME ? incomes : expenses;
-  return items[items.length - 1];
-}
-
-export function setCurrentBudgetType(type: BudegtType) {
-  console.log("setCurrentBudgetType", type);
-
-  currentBudgetType = type;
-}
-
-export function deleteBudgetItem(id: string, type: BudegtType): void {
-  const items: IBudgetItem[] = type == BudegtType.INCOME ? incomes : expenses;
-
-  const index = items.findIndex((it) => it.id == id);
-  if (index < 0) {
-    throw Error(`id not found : ${id}`);
-  }
-  items.splice(index, 1);
-}
-
-export function addBudgetItem(item: IBudgetItem): void {
-  const items: IBudgetItem[] =
-    currentBudgetType == BudegtType.INCOME ? incomes : expenses;
-  items.push(item);
-}
-
-export function computeSum(type: BudegtType): number {
-  return computeTotal(type == BudegtType.INCOME ? incomes : expenses);
-}
-
-function computeTotal(items: IBudgetItem[]): number {
-  let sum = 0;
-  items.forEach((item) => {
-    sum += item.amount;
-  });
-  return sum;
-}
-
-export function computeBudget(): number {
-  return computeTotal(incomes) - computeTotal(expenses);
+export function computeBudget() : number{
+    return computeTotal(incomes) - computeTotal(expenses);
 }

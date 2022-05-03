@@ -13,10 +13,10 @@ const month = [
   "December",
 ];
 
-export  function getMonth(date: Date): string {
-  return month[date.getMonth()];
+export function getYear(date: Date): number {
+  return date.getFullYear();
 }
 
-export  function getYear(date: Date):number{
-    return date.getFullYear();
+export function getMonth(date: Date): string {
+  return month[date.getMonth()];
 }
