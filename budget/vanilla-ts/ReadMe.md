@@ -25,8 +25,7 @@ Build the budget project (javascript project) in vanilla typescript. Check <a hr
 
 <h2>Design</h2>
 <ul>
-<li>view directory for view, logic directory for logic
-</li>
+<li>view directory for view, logic directory for logic</li>
 <li>no persistence in local storage - this may be an exercise</li>
 <li>View
 <ul>
@@ -39,14 +38,18 @@ Build the budget project (javascript project) in vanilla typescript. Check <a hr
 <li>Logic
 <ul>
 <li>IBudgetItem : description : string , amount : number , id : string</li>
-<li>incomes\incomes : IBudgetItem [] , expenses : IBudgetItem [] (percentage is computed thus not here)</li>
+<li>incomes\expenses : IBudgetItem [] , expenses : IBudgetItem [] (percentage is computed thus not here)</li>
 <li>operations : computeBudget, deleteBudgetItem,addBudgetItem,......
 </ul>
  </li>
 </ul>
 
 <h2>Flow</h2>
-Do logic and view together in this order: Head, Input, Body
+<ul>
+<li>follow this order :  Head, Input, Body (Incomes follwed by Expenses)</li>
+<li>given a component : start with view , followed by logic and last css</li>
+</ul>
+
 
 <h2>Future</h2>
 <ul>
