@@ -46,7 +46,7 @@ Build the budget project (javascript project) in vanilla typescript. Check <a hr
 
 <h2>Flow</h2>
 <ul>
-<li>follow this order :  Head, Input, Body (Incomes follwed by Expenses)</li>
+<li>follow this component order :  Head, Input, Body (Incomes follwed by Expenses) and github tag after finish each</li>
 <li>given a component : start with view , followed by logic and last css</li>
 </ul>
 
