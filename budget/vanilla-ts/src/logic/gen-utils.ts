@@ -1,3 +1,9 @@
+import { v4 as uuidv4 } from 'uuid';
+
+export function createUniqueId() : string{
+  return uuidv4();
+}
+
 export function computePercentage(num: number, den: number): number {
   return (num / den) * 100;
 }

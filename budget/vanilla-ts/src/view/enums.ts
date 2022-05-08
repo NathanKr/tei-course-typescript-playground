@@ -7,5 +7,15 @@ export enum ClassHead {
   Expense = "expense",
   Title = "title",
   Percentage = "percentage",
-  Date = "date"
+  Date = "date",
+  Dynamic="dynamic"
+}
+
+
+export enum ClassInput{
+  Root = 'Input',
+  SelectedIncome = 'selected-income',
+  SelectedExpense = 'selected-expense',
+  ButtonExpense = 'button-expense',
+  ButtonIncome = 'button-income',
 }
