@@ -19,3 +19,11 @@ export enum ClassInput{
   ButtonExpense = 'button-expense',
   ButtonIncome = 'button-income',
 }
+
+export enum ClassIncExp{
+  Header = 'header',
+  Left= 'left',
+  Delete = 'delete',
+  Right = 'right',
+  Item = 'item'
+}

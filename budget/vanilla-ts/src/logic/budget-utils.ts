@@ -19,7 +19,6 @@ export function setCurrentBudgetItem(type : BudgetType){
 export function addBudgetItem(item :IBudgetItem){
   const items = (currentBudgetItem == BudgetType.Income) ?incomes :expenses;
   items.push(item);
-  console.log(items);
 }
 
 export function computeSum(type : BudgetType): number{
@@ -39,4 +38,15 @@ function computeTotal(items : IBudgetItem []) : number{
 
 export function computeBudget() : number{
     return computeTotal(incomes) - computeTotal(expenses);
+}
+
+export function getLastBudgetItem() : IBudgetItem{
+  const items = (currentBudgetItem == BudgetType.Income) ? incomes: expenses;
+  return items[items.length-1];
+}
+
+export function deleteBudgetItem(id : string,type : BudgetType) : void{
+  const items = (type == BudgetType.Income) ? incomes: expenses;
+  const index = items.findIndex(it => it.id == id);
+  items.splice(index,1);
 }
