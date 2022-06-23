@@ -22,7 +22,7 @@ export const mul = (n1: number, n2: number): number => {
 
 export function writeStudent(student: IStudent) {
   console.log(
-    `first : ${student.firstName} , last : ${student.lastName} , age : ${student.age} , avg : ${student.avgGrade}`
+    `first : ${student.firstName} , last : ${student.lastName} , age : ${student.age} , avg : ${student.avgGrade} , height : ${student.height}`
   );
 }
 

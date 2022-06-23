@@ -1,6 +1,5 @@
-export default interface IStudent{
-    firstName : string;
-    lastName : string;
-    age : number;
-    avgGrade : number;
-}
+import IPerson from "./IPerson";
+
+type IStudent = IPerson & {avgGrade : number};
+
+export default IStudent;
